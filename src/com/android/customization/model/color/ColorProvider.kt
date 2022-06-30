@@ -77,6 +77,7 @@ class ColorProvider(context: Context, stubPackageName: String) :
     }
 
     private fun loadPreset() {
+        if (!isAvailable()) return
         val bundlesList = ArrayList<String>()
         val bundleNames = mStubApkResources.getStringArray(
             mStubApkResources.getIdentifier(
